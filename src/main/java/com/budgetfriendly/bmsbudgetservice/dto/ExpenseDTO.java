@@ -1,44 +1,28 @@
-package com.budgetfriendly.bmsbudgetservice.entity;
+package com.budgetfriendly.bmsbudgetservice.dto;
 
-import javax.persistence.*;
+
 import java.util.Date;
 
-@Entity
-@Table(name = "expense")
-public class Expense {
+public class ExpenseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "expense_date")
     private Date expenseDate;
 
-    @ManyToOne
-    @JoinColumn(name = "master_expense_category_id_fk")
-    private MasterExpenseCategory masterExpenseCategory;
+    private MasterExpenseCategoryDTO masterExpenseCategoryDTO;
 
-    @Column(name = "expense_type")
     private String expenseType;
 
-    @Column(name = "expense_amount")
     private double expenseAmount;
 
-    @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id_fk")
-    private Users user;
+    private UserDTO userDTO;
 
-    @Column(name = "created_at")
     private Date createdAt;
 
-    @Column(name = "expense_month")
     private int expenseMonth;
 
-    @Column(name = "expense_year")
     private int expenseYear;
 
     public Long getId() {
@@ -57,12 +41,12 @@ public class Expense {
         this.expenseDate = expenseDate;
     }
 
-    public MasterExpenseCategory getMasterExpenseCategory() {
-        return masterExpenseCategory;
+    public MasterExpenseCategoryDTO getMasterExpenseCategoryDTO() {
+        return masterExpenseCategoryDTO;
     }
 
-    public void setMasterExpenseCategory(MasterExpenseCategory masterExpenseCategory) {
-        this.masterExpenseCategory = masterExpenseCategory;
+    public void setMasterExpenseCategoryDTO(MasterExpenseCategoryDTO masterExpenseCategoryDTO) {
+        this.masterExpenseCategoryDTO = masterExpenseCategoryDTO;
     }
 
     public String getExpenseType() {
@@ -89,12 +73,12 @@ public class Expense {
         this.description = description;
     }
 
-    public Users getUser() {
-        return user;
+    public UserDTO getUserDTO() {
+        return userDTO;
     }
 
-    public void setUser(Users user) {
-        this.user = user;
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
     }
 
     public Date getCreatedAt() {
