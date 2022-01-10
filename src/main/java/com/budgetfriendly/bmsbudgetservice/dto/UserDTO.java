@@ -13,6 +13,7 @@ public class UserDTO {
     private String gender;
     private Boolean status;
     private Date createdAt;
+    private MasterCityDTO masterCityDTO;
 
     public Long getId() {
         return id;
@@ -86,5 +87,11 @@ public class UserDTO {
         this.createdAt = createdAt;
     }
 
+    public MasterCityDTO getMasterCityDTO() {
+        return masterCityDTO;
+    }
 
+    public void setMasterCityDTO(MasterCityDTO masterCityDTO) {
+        this.masterCityDTO = masterCityDTO;
+    }
 }
