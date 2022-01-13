@@ -17,13 +17,9 @@ public class ExpenseDTO {
 
     private String description;
 
-    private UserDTO userDTO;
+    private Long userId;
 
     private Date createdAt;
-
-    private int expenseMonth;
-
-    private int expenseYear;
 
     public Long getId() {
         return id;
@@ -73,12 +69,12 @@ public class ExpenseDTO {
         this.description = description;
     }
 
-    public UserDTO getUserDTO() {
-        return userDTO;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUserDTO(UserDTO userDTO) {
-        this.userDTO = userDTO;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getCreatedAt() {
@@ -89,19 +85,5 @@ public class ExpenseDTO {
         this.createdAt = createdAt;
     }
 
-    public int getExpenseMonth() {
-        return expenseMonth;
-    }
 
-    public void setExpenseMonth(int expenseMonth) {
-        this.expenseMonth = expenseMonth;
-    }
-
-    public int getExpenseYear() {
-        return expenseYear;
-    }
-
-    public void setExpenseYear(int expenseYear) {
-        this.expenseYear = expenseYear;
-    }
 }

@@ -39,10 +39,10 @@ public class JWTFilterConfig extends OncePerRequestFilter {
 
     private static final String EMPTY_STRING = "";
 
-    @Value("${app.subject}")
+    @Value("${subject}")
     private String subject;
 
-    @Value("${app.issuer}")
+    @Value("${issuer}")
     private String issuer;
 
     private RSAPrivateKey pk;
@@ -154,7 +154,39 @@ public class JWTFilterConfig extends OncePerRequestFilter {
 
                 }
 
-            }
+//            }else {
+//
+//
+//                boolean flag=true;
+//
+//                if ("/bakery-service/bakery/addBakeryDet".equalsIgnoreCase(request.getRequestURI())) {
+//
+//                    flag=false;
+//                }
+//
+//                if (request.getRequestURI().equalsIgnoreCase("/bakery-service/v2/api-docs")) {
+//                    flag=false;
+//                }
+//                if (request.getRequestURI().startsWith("/bakery-service/configuration")) {
+//                    flag=false;
+//                }
+//                if (request.getRequestURI().startsWith("/bakery-service/swagger")) {
+//                    flag=false;
+//                }
+//                if (request.getRequestURI().equalsIgnoreCase("/bakery-service/v2/api-docs")) {
+//                    flag=false;
+//                }
+//                if (request.getRequestURI().startsWith("/bakery-service/webjars")) {
+//                    flag=false;
+//                }
+//
+//                if(flag) {
+//
+//                    response.sendError(HttpServletResponse.SC_NOT_FOUND, "Token can not to be empty");
+//
+//                }
+//
+           }
 
             filterChain.doFilter(request, response);
         }catch (IllegalArgumentException e) {
